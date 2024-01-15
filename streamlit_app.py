@@ -22,6 +22,8 @@ def load_data():
         docs = loader.load_data()
         service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert on Prezi and your job is to answer user questions. Assume that all questions are related to using Prezi. Keep your answers useful and based on facts – do not hallucinate features."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
+        PERSIST_DIR = "./"
+        index.storage_context.persist(persist_dir=PERSIST_DIR)
         return index
 
 index = load_data()
