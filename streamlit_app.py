@@ -6,7 +6,7 @@ from llama_index import SimpleDirectoryReader, download_loader
 
 st.set_page_config(page_title="Ask about Prezi", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("Ask about Prezi, powered by LlamaIndex 💬🦙")
+st.title("Ask me about Prezi... 💬🦙")
 st.info("Imported content from Prezi Zendesk", icon="📃")
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
