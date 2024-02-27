@@ -23,7 +23,7 @@ def load_data():
         docs = loader.load_data()
         service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an support expert on Prezi and your job is to answer user questions. Assume that all questions are related to using Prezi. When given a question or statement in other languages, translate them to english before providing an answer in English. Keep your answers useful and based on facts – do not hallucinate features. When you don't know an answer just say 'I Don't Know'. Always add the original user content at the beginning of every response."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
-        PERSIST_DIR = "./"
+        PERSIST_DIR = "./zendesk"
         index.storage_context.persist(persist_dir=PERSIST_DIR)
         return index
 
