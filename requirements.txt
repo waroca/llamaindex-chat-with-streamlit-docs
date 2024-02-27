@@ -1,3 +1,4 @@
 streamlit
 llama-index-llms-openai
 llama-index==0.10.09
+openai
