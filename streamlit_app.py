@@ -1,8 +1,8 @@
 import streamlit as st
-from llama_index import VectorStoreIndex, ServiceContext
-from llama_index.llms import OpenAI
+from llama_index.core import VectorStoreIndex, ServiceContext
+from llama_index.llms.openai import OpenAI
 import openai
-from llama_index import download_loader
+from llama_index.core import download_loader
 
 st.set_page_config(page_title="Ask about Prezi", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
